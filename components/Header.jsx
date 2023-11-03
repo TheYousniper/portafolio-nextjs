@@ -13,6 +13,7 @@ const Header = () => {
               width={220}
               height={48}
               priority={true}
+              alt=""
             />
           </Link>
           <Socials />

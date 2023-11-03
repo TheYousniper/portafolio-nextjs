@@ -19,6 +19,16 @@ import {
 } from "react-icons/si";
 
 //  data
+const htmlIcon = <FaHtml5 />;
+const cssIcon = <FaCss3 />;
+const jsIcon = <FaJs />;
+const reactIcon = <FaReact />;
+const nextIcon = <SiNextdotjs />;
+const framerIcon = <SiFramer />;
+const wordpressIcon = <FaWordpress />;
+const figmaIcon = <FaFigma />;
+const adobexdIcon = <SiAdobexd />;
+const adobephotoshopIcon = <SiAdobephotoshop />;
 const aboutData = [
   {
     title: "skills",
@@ -26,18 +36,18 @@ const aboutData = [
       {
         title: "Web Development",
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          htmlIcon,
+          cssIcon,
+          jsIcon,
+          reactIcon,
+          nextIcon,
+          framerIcon,
+          wordpressIcon,
         ],
       },
       {
         title: "UI/UX Design",
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [figmaIcon, adobexdIcon, adobephotoshopIcon],
       },
     ],
   },
@@ -136,9 +146,9 @@ const About = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 year ago, I began freelancing as a developer. Since then, I've
-            done remote work for agencies, counsulted for startups, and
-            collaborated on digital products for bussines and consumer use.
+            10 year ago, I began freelancing as a developer. Since then,
+            I&apos;ve done remote work for agencies, counsulted for startups,
+            and collaborated on digital products for bussines and consumer use.
           </motion.p>
           <motion.div
             variants={fadeIn("right", 0.6)}
@@ -217,8 +227,12 @@ const About = () => {
                   <div className="hidden md:flex">-</div>
                   <div>{item.stage}</div>
                   <div className="flex gap-x-4">
-                    {item.icons?.map((icon, itemIndex) => {
-                      return <div className="text-2xl text-white">{icon}</div>;
+                    {item.icons?.map((icon, iconIndex) => {
+                      return (
+                        <div key={iconIndex} className="text-2xl text-white">
+                          {icon}
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
